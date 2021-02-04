@@ -8,7 +8,9 @@ What are known problems, if any, with your project?
 
 What would you do to improve your project in the future?
 
-#HW 5 Spotify API
 
 Create .env in your directory
-Add line: 'export SPOTIFY_KEY='YOUR_KEY'
+Add lines:
+
+export ID='YOUR KEY'
+export SECRET='YOUR KEY'
