@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+<!this is a comment>
+  
+<html> 
+<head>
+    <h1>Naman's favorite TV shows are Avatar, Korra, Mandalorian.</h1>
+    <link rel="stylesheet" href={{ url_for('static', filename='style14.css') }} />
+</head> 
+<body> 
+  
+<ol> 
+<!-- For loop logic of jinja template -->
+{%for i in range(0, length)%} 
+  
+    <li>{{tv_shows[i]}}</li> 
+{%endfor%} 
+  
+</ol> 
+  
+</body> 
+</html> 

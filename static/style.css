@@ -1,0 +1,12 @@
+body {
+    background-color: hotpink;
+    font-family: Arial;
+}
+
+li { font-size: 36px }
+li:nth-child(1)::marker {
+  color: black;
+}
+
+li:first-child { color: green }
+
