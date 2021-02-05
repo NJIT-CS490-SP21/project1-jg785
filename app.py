@@ -45,10 +45,15 @@ response = requests.get(BASE_URL,
                 headers=headers,
                 params={'market': 'US'})
 
-#array of data from response
+#array of data from response - fetched top tracks
 data = response.json()
 #print(data)
 
-#for loop to get 10 songs
-for i in range(0,10):
-    print(data['tracks'][i]['name'])
+#to get songs - data['tracks'][i]['name']
+
+random_song_num = random.randint(0, 9)
+
+print(data['tracks'][random_song_num]['artists'][0]['name'])
+print(data['tracks'][random_song_num]['name'])
+print(data['tracks'][random_song_num]['preview_url'])
+print(data['tracks'][random_song_num]['album']['images'][1]['url'])
