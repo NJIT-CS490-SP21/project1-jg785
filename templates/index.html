@@ -3,19 +3,17 @@
   
 <html> 
 <head>
-    <h1>Naman's favorite TV shows are Avatar, Korra, Mandalorian.</h1>
-    <link rel="stylesheet" href={{ url_for('static', filename='style14.css') }} />
+<div style="text-align:center;">
+    <h1>Spotify</h1>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"type="text/css" />
+    <h2>{{spotify[0]}}</h2>
+    <h2>{{spotify[1]}}</h2>
+    <img src="{{spotify[3]}}"/><br>
+    <a href="{{spotify[2]}}">Preview this song if available!</a>
+</div>
 </head> 
 <body> 
-  
-<ol> 
-<!-- For loop logic of jinja template -->
-{%for i in range(0, length)%} 
-  
-    <li>{{tv_shows[i]}}</li> 
-{%endfor%} 
-  
-</ol> 
-  
-</body> 
-</html> 
+</body>
+</html>
+ 
+ 

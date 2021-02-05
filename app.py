@@ -2,9 +2,14 @@ import requests
 import os
 import random
 from dotenv import load_dotenv, find_dotenv
+from flask import Flask, render_template
+
+################################
+#Using Spotify API to fetch data
 
 load_dotenv(find_dotenv()) # This is to load your API keys from .env
 
+#KEYS
 CLIENT_ID = os.getenv('ID')
 CLIENT_SECRET = os.getenv('SECRET')
 
@@ -50,10 +55,37 @@ data = response.json()
 #print(data)
 
 #to get songs - data['tracks'][i]['name']
-
+#random - to get a random song from 1-10
 random_song_num = random.randint(0, 9)
 
-print(data['tracks'][random_song_num]['artists'][0]['name'])
-print(data['tracks'][random_song_num]['name'])
-print(data['tracks'][random_song_num]['preview_url'])
-print(data['tracks'][random_song_num]['album']['images'][1]['url'])
+artist_name = data['tracks'][random_song_num]['artists'][0]['name']
+song_name = data['tracks'][random_song_num]['name']
+preview_url = data['tracks'][random_song_num]['preview_url']
+image_url = data['tracks'][random_song_num]['album']['images'][1]['url']
+
+#array with all information to be displayed
+spotify = [artist_name, song_name, preview_url, image_url]
+
+#print(artist_name, song_name, preview_url, image_url)
+################################
+#Create server
+
+app = Flask(__name__)
+
+#connect URL with function
+@app.route('/')
+def hello_world():
+    print('Updated printline')
+    return render_template(
+        "index.html",
+        length = len(spotify),
+        spotify = spotify
+    )
+    
+app.run(
+    #externally visible server
+    host=os.getenv('IP', '0.0.0.0'),
+    port=int(os.getenv('PORT', 8080)),
+    #will restart server when there are changes
+    debug=True
+)
