@@ -1,5 +1,6 @@
 <!DOCTYPE html> 
 <!this is a comment>
+<!If you want to use a variable use {{variable}}>
   
 <html> 
 <head>
@@ -11,10 +12,13 @@
     <img src="{{image_url}}"/><br>
     <a href="{{song_preview_url}}">Preview this song if available!<br></a>
     
-    
-    <audio controls>
-    <source src="{{song_preview_url}}">Audio tag not supported</audio>
-    </audio>
+    {% if song_preview_url == None %}
+        <h2>No preview available for this song.</h2>
+    {% else %}
+        <audio controls>
+        <source src="{{song_preview_url}}">Audio tag not supported</audio>
+        </audio>
+    {% endif %}
     
 </div>
 </head> 
