@@ -60,11 +60,11 @@ random_song_num = random.randint(0, 9)
 
 artist_name = data['tracks'][random_song_num]['artists'][0]['name']
 song_name = data['tracks'][random_song_num]['name']
-preview_url = data['tracks'][random_song_num]['preview_url']
+song_preview_url = data['tracks'][random_song_num]['preview_url']
 image_url = data['tracks'][random_song_num]['album']['images'][1]['url']
 
 #array with all information to be displayed
-spotify = [artist_name, song_name, preview_url, image_url]
+#spotify = [artist_name, song_name, song_preview_url, image_url]
 
 #print(artist_name, song_name, preview_url, image_url)
 ################################
@@ -78,8 +78,10 @@ def hello_world():
     print('Updated printline')
     return render_template(
         "index.html",
-        length = len(spotify),
-        spotify = spotify
+        artist_name = artist_name,
+        song_name = song_name,
+        song_preview_url = song_preview_url,
+        image_url = image_url
     )
     
 app.run(

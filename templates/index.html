@@ -6,14 +6,14 @@
 <div style="text-align:center;">
     <h1>Spotify</h1>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"type="text/css" />
-    <h2>{{spotify[0]}}</h2>
-    <h2>{{spotify[1]}}</h2>
-    <img src="{{spotify[3]}}"/><br>
-    <a href="{{spotify[2]}}">Preview this song if available!</a>
+    <h2>{{artist_name}}</h2>
+    <h2>{{song_name}}</h2>
+    <img src="{{image_url}}"/><br>
+    <a href="{{song_preview_url}}">Preview this song if available!<br></a>
     
     
     <audio controls>
-    <source src="{{spotify[2]}}">Audio tag not supported</audio>
+    <source src="{{song_preview_url}}">Audio tag not supported</audio>
     </audio>
     
 </div>
