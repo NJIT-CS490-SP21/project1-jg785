@@ -18,17 +18,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"type="text/css" />
 </head> 
 <body>
-    <h2>{{song_name}}</h2>
-    <h2>by {{artist_name}}</h2>
-    <img src="{{image_url}}"/><br>
+    <h2>{{spotify_data[1]}}</h2>
+    <h2>by {{spotify_data[0]}}</h2>
+    <img src="{{spotify_data[3]}}"/><br>
     
     <div class="songPreview">
-        {% if song_preview_url == None %}
+        {% if spotify_data[2] == None %}
             <h2>No preview available for this song.</h2>
         {% else %}
-            <a class="song_link" href="{{song_preview_url}}">Preview this song if available!</a><br>
+            <a class="song_link" href="{{spotify_data[2]}}">Preview this song if available!</a><br>
             <audio controls>
-            <br><source src="{{song_preview_url}}">Audio tag not supported</audio>
+            <br><source src="{{spotify_data[2]}}">Audio tag not supported</audio>
             </audio><br>
         {% endif %}
     </div>

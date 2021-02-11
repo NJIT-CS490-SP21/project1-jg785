@@ -8,6 +8,9 @@ API used: Spotify, Genius.
 I encountered some problems when I was trying to align my text to the center. I also had some problems when I was
 trying to fetch the right data and last but not least when my website was not updating the colors and text at all.
 Beautifying my website took me quite a while since this is my second time using HTML and CSS.
+I also struggled for a little bit since every time my app was refreshed the data wouldn't change. I fixed it by putting
+my code into chunks in functions and passing the return from that to an array and passing that when creating the web server
+so everytime someone clicks refresh it sends a new request.
 
 I would love to improve my HTML and CSS skill since this could make a simple project like this one
 so much nice looking.
