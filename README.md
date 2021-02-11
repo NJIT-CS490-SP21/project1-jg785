@@ -1,7 +1,8 @@
 Project 1, Mileston 1 & 2 - Jhon Garcia
 
 Programs used to do this project: Python, HTML, CSS and some knowledge using terminal.
-Imported: requests, os, random, load_dotenv and find_dotenv from dotenv, Flask, render_template from flask
+Imported: requests, os, random, load_dotenv and find_dotenv from dotenv, Flask, render_template from flask.
+Also, install do npm install -g heroku to install the heroku library.
 API used: Spotify, Genius.
 
 I encountered some problems when I was trying to align my text to the center. I also had some problems when I was
@@ -26,3 +27,5 @@ You will need to do the following:
 
 ID is the clientID and SECRET is the client secret from spotify API website developers.
 GENIUS_ACCESS_TOKEN is the access token from your app in the Genius API website.
+
+This web app was deployed using Heroku.
