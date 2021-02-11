@@ -4,31 +4,47 @@
   
 <html> 
 <head>
-<div style="text-align:center;">
-    <h1>Spotify</h1>
+    <title>Spotify App</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    
+    <div class="header">
+        <h1>Spotify</h1>
+    </div>
+    
+    <div class="spotify_logo">
+        <i class="fa fa-spotify fa-5x"></i>
+    </div>
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"type="text/css" />
-    <h2>{{artist_name}}</h2>
+</head> 
+<body>
     <h2>{{song_name}}</h2>
+    <h2>by {{artist_name}}</h2>
     <img src="{{image_url}}"/><br>
     
+    <div class="songPreview">
+        {% if song_preview_url == None %}
+            <h2>No preview available for this song.</h2>
+        {% else %}
+            <a class="song_link" href="{{song_preview_url}}">Preview this song if available!</a><br>
+            <audio controls>
+            <br><source src="{{song_preview_url}}">Audio tag not supported</audio>
+            </audio><br>
+        {% endif %}
+    </div>
     
-    {% if song_preview_url == None %}
-        <h2>No preview available for this song.</h2>
-    {% else %}
-        <a href="{{song_preview_url}}">Preview this song if available!</a><br>
-        <audio controls>
-        <source src="{{song_preview_url}}">Audio tag not supported</audio>
-        </audio><br>
-    {% endif %}
+    <div class="songLyrics">
+        {% if song_lyrics_url == None %}
+            <h2>No lyrics available for this song.</h2>
+        {% else %}
+            <div class="buttonClass">
+            <a href="{{song_lyrics_url}}" target="_parent"><button>Click here to see the lyrics</button></a>
+            </div>
+        {% endif %}
+    </div>
     
-    {% if song_lyrics_url == None %}
-        <h2>No lyrics available for this song.</h2>
-    {% else %}
-        <a href="{{song_lyrics_url}}" target="_parent"><button>Try it</button></a>
-    {% endif %}
-    
-</div>
-</head> 
-<body> 
+    <div class="footer">
+      <p>Designed by Jhon Garcia.</p>
+    </div>
 </body>
 </html>
